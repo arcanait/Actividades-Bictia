@@ -1,0 +1,115 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.header .nav{
+    background-color:  #1ba1ad;
+    height: 60px;
+    width: 100%;
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 
+    0 6px 10px 0 rgba(0,0,0,.14), 
+    0 1px 18px 0 rgba(0,0,0,.12);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+.nav ul{
+    display: flex;
+    justify-content: center;
+    padding-top:20px;
+    margin: 0;
+    align-items: center;
+    text-align: center;
+}
+.nav ul li{
+    align-items: center;
+    text-align: center;
+    list-style: none;
+    padding-right: 50px;
+}
+ul li a{
+    color: #ffffff;
+    border: 1px solid white;
+    padding: 8px
+}
+ul li a:hover{
+    color: #000000;
+    border: 1px solid #000000;
+    cursor:pointer
+}
+.container{
+    margin-top: 60px;
+}
+.main-image img{
+    max-width: 500px;
+    max-height: 400px;
+    margin-left: 100px;
+}
+aside{
+    position: sticky;
+    background-color: #ee9a1f;
+    float: right;
+    width: 30%;
+    padding-top: 20px;
+    margin-left: 20px;
+    text-align: center;
+}
+
+aside .aside-content-a {
+    margin-bottom: 20px;
+}
+
+aside .aside-content-a img{
+    margin-top: 20px;
+    width: 300px;
+    height: 300px;
+    transition: all .2s ease-in-out;
+}
+aside .aside-content-a p{
+    text-align: justify;
+    margin: 0 50px auto
+}
+
+aside .aside-content-a img:hover{
+    width: 300px;
+    height: 300px;
+    transform: scale(1.1);
+    border: 1px solid #000000;
+    box-shadow: 0 0 10px 10px #ffffff;
+
+}
+
+aside .aside-content-b img{
+    width: 250px;
+    height: 200px;
+    transition: all .2s ease-in-out;
+}
+
+aside .aside-content-b p{
+    text-align: justify;
+    margin: 0 50px auto
+}
+
+aside .aside-content-b img:hover{
+    transform: scale(1.1);
+    border: 1px solid #000000;
+    box-shadow: 0 0 10px 10px #ffffff;
+}
+.table p{
+    text-align: justify;
+}
+table{
+    border-collapse: collapse;
+    width: 50%;
+    margin-left: 5%
+}
+table, th, td {
+  border: 1px solid black;
+  text-align: center;
+}
+.form{
+    margin-top: 20px;
+}
+.form input{
+    width: 60%;
+}
