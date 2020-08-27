@@ -23,23 +23,30 @@ document.getElementById('division').addEventListener('click', () => {
     let signo = document.getElementById('division').innerHTML
     operarSegunSigno( signo ,numero1, numero2)
 })
+let divHistorial = document.getElementById('historial')
+let listaHistorial = document.createElement('p')
+
+var historial = [];
 operarSegunSigno = (signo, numero1, numero2) => {
     let a = parseFloat(numero1)
     let b = parseFloat(numero2)
-    let historial = [];
     switch(signo){
         case '+':
             let miSuma = suma(a, b)
-            return alert(`la suma de ${a} y ${b} es: ${miSuma}`) ;
+            historial.push(`${a} + ${b} = ${miSuma}`)
+            return alert(`la suma de ${a} y ${b} es: ${miSuma}`);
         case '-':
             let miResta = resta(a, b)
-            return alert(`la resta de ${a} y ${b} es: ${miResta}`) ;
+            historial.push(`${a} - ${b} = ${miResta}`)
+            return alert(`la resta de ${a} y ${b} es: ${miResta}`);
         case '*':
             let miMultiplicacion = multiplicacion(a, b)
-            return alert(`la multiplicación de ${a} y ${b} es: ${miMultiplicacion}`) ;
+            historial.push(`${a} * ${b} = ${miMultiplicacion}`)
+            return alert(`la multiplicación de ${a} y ${b} es: ${miMultiplicacion}`);
         case '/':
             let miDivision = division(a, b)
-        return alert(`la división de ${a} entre ${b} es: ${miDivision}`) ;
+            historial.push(`${a} / ${b} = ${miDivision}`)
+        return alert(`la división de ${a} entre ${b} es: ${miDivision}`);
         default:
             return console.log('algo anda mal')
     }

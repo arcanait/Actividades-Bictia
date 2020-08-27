@@ -1,0 +1,31 @@
+body{
+    height: 500px;
+    background-color: #bb2ab4;
+}
+header h1{
+    text-align: center;
+    color: #ffffff;
+}
+.container{
+    text-align: center;
+    align-items: center;
+    border: solid #ffffff 1px;
+    margin-right: 20%;
+    margin-left: 20%;
+    margin-top: 30%;
+    padding: 40px 30px;
+}
+.inputs{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+}
+#suma, #resta, #multiplicacion, #division{
+    padding: 5px 10px;
+    text-align: center;
+    align-items: center;
+}
