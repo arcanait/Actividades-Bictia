@@ -1,0 +1,72 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(216, 141, 160);
+}
+header h1{
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+}
+#form{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    align-items: center;
+    margin: 0 auto;
+    border: solid 2px blue;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgb(63, 63, 219);
+}
+#form div{
+    margin-bottom: 20px;
+    width: 400px;
+}
+#form div input{
+    width: 100%;
+    box-shadow: 0 0 10px rgb(63, 63, 219);
+    border: solid 1px rgb(35, 35, 36);
+}
+#form div input:focus{
+    outline: none!important;
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 0 0 10px #749ECE;
+}
+#form div small{
+    color: red;
+}
+.check-tyc{
+    display: flex;
+    align-items: center;
+}
+.check-tyc input{
+    width: 25px!important;
+    text-align: left;
+    box-shadow: none!important;
+    cursor: pointer;
+}
+.check-tyc label{
+   color: rgb(4, 4, 185);
+   cursor: pointer;
+}
+.btn-enviar{
+    padding: 15px 20px;
+    background-color: rgb(1, 43, 134);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn-enviar:hover{
+    opacity: 0.9;
+    transform: scale(1.1);
+}
+
+
+
