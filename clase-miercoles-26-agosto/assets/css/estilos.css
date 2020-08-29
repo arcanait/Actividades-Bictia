@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body{
     height: 500px;
     background-color: #bb2ab4;
@@ -12,13 +17,24 @@ header h1{
     border: solid #ffffff 1px;
     margin-right: 20%;
     margin-left: 20%;
-    margin-top: 30%;
     padding: 40px 30px;
 }
 .inputs{
     margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
+}
+label{
+    color: white;
+}
+input{
+    box-shadow: 0 0 5px rgb(154, 207, 29);
+    border: solid 1px #ffffff;
+}
+input:focus{
+    outline: none!important;
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 0 0 10px #749ECE;
 }
 .buttons{
     display: flex;
@@ -28,4 +44,26 @@ header h1{
     padding: 5px 10px;
     text-align: center;
     align-items: center;
+    background-color: rgb(48, 48, 238);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover{
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+.contenedor-historial{
+    width: 100%;
+    height: 300px;
+    border: solid 1px rgb(16, 16, 221);
+    box-shadow: 0 0 5px #ffffff;
+    margin-top: 10px;
+    display: flex;
+    overflow: scroll;
+    margin: 30px;
+}
+#historial{
+    color: #ffffff;
 }
