@@ -1,0 +1,11 @@
+.dado{
+    width: 100px;
+    height: 100px;
+    padding: 7px;
+}
+.punto{
+    width: 15px;
+    height: 15px;
+    background-color: black;
+    border-radius: 50%;
+}
