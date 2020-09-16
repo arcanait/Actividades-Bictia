@@ -1,0 +1,28 @@
+.fila-header{
+    background-color: rgb(30, 30, 192);
+    height: 100px;
+    color: #ffffff;
+    width: 100%;
+    margin: 0!important;
+
+}
+.fila-main{
+    height: 300px;
+    color: #ffffff;
+}
+.articulo-main{
+    background-color: rgb(211, 26, 63);
+}
+.sidebar-main{
+    background-color: rgb(3, 167, 3);
+    height: 140px;
+    /* margin: auto; */
+}
+.columnas-sub{
+    background-color: rgb(130, 15, 175);
+}
+.fila-footer{
+    background-color: darkorange;
+    height: 100px;
+    color: #ffffff;
+}
