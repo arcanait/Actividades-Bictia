@@ -2,6 +2,9 @@
     width: 100px;
     height: 100px;
     padding: 7px;
+    border: solid gray 1px;
+    background-color: rgb(180, 180, 180);
+    box-shadow: 0 0 10px rgba(74, 79, 126, 0.199);
 }
 .punto{
     width: 15px;
