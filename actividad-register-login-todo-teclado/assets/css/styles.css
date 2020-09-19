@@ -1,0 +1,36 @@
+.contenedor-registro{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.contenedor-registro h1{
+    text-align: center;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+form label{
+    justify-content: left;
+    font-size: 20px;
+}
+form input{
+    width: 500px;
+    margin-bottom: 10px;
+    height: 25px;
+}
+form input:focus{
+    outline: none !important;
+    border: 1px solid #333;
+    /* background-color: rgb(230, 142, 28); */
+}
+form .boton-submit{
+    border: 1px solid #333;
+    box-shadow: 0 0 4px #333;
+    width: 30%;
+    height: 40px;
+    margin: 0 auto;
+    background-color: rgb(230, 142, 28);
+}
