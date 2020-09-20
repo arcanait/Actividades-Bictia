@@ -1,0 +1,4 @@
+.contenedor-teclado{
+    display: flex;
+    flex-direction: column;
+}

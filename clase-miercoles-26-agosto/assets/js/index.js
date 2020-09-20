@@ -64,7 +64,6 @@ const crearHistorial = () => {
         li.appendChild(calculo);
         let ulHistorial = document.getElementById('historial');
         ulHistorial.appendChild(li);
-        console.log(historial[0])
         historial = [];
 }
 

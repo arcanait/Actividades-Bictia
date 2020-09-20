@@ -11,14 +11,18 @@
         <h1>¡Registrate!</h1>
         <form id='register'>
             <label>Nombre: </label>
-            <input id='nombre' type="text">
+            <input id='nombre' type="text" required>
+            <small id="alertName"></small>
             <label>Correo: </label>
-            <input id='correo' type="text">
+            <input id='correo' type="text" required>
+            <small id="alertEmail"></small>
             <label>Contraseña: </label>
-            <input id='contraseña' type="password">
+            <input id='contrasena' type="password" required>
+            <small id="alertPassword"></small>
             <input class="boton-submit" type="submit" >
         </form>
     </div>
-    <script src="./assets/js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="./assets/js/registerValidate.js"></script>
 </body>
 </html>

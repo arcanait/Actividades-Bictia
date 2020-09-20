@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/todo.css">
+    <title>TODO</title>
+</head>
+<body>
+    <main>
+        <div class="contenedor-todo">
+            <div class="row fila">
+                <div class="perfil col-md-4 col-lg-4">
+                    <img src="../img/user.png" alt="usuario">
+                    <span class="bienvenido">Bienvenido</span>
+                    <span id='user-name'></span>
+                    <button class="list" onclick='irATeclado()'>Añadir nueva lista</button>
+                </div>
+                <div class="todo col-md-8 col-lg-8">
+                    <span class='titulo'>Lista de tareas del bootcamp</span>
+                    <form onsubmit='anadirTarea(event)'>
+                        <input id="input-tarea" type="text">
+                        <button id="add-work" class='add-work' type='submit' >Añadir tarea</button>
+                    </form>
+                    <span class="pendiente" >Mis tareas pendientes</span>
+                    <div id='espacio-de-tareas' class="espacio-de-tareas">
+                        <ul id="lists-works"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </main>
+    <script src='../js/todo.js'></script>
+</body>
+</html>
