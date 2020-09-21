@@ -1,4 +1,37 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
 .contenedor-teclado{
     display: flex;
     flex-direction: column;
+}
+#texto-teclado{
+    width: 80%;
+    height: 150px;
+    border: 1px solid orange;
+    box-shadow: 0 0 8px #333;
+    margin: 35px auto;
+    padding: 10px;
+}
+.teclas{
+    margin-top: 20px!important;
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid #333;
+    box-shadow: 0 0 8px #333;
+    display: flex;
+    flex-wrap: wrap;
+}
+.tecla{
+    padding: 15px 25px;
+    border: 1px solid orange;
+    margin: 5px 5px;
+    background-color: #4b1e28;
+    color: #fff;
+}
+.tecla:active{
+    background-color: orange;
+    color: #333;
 }

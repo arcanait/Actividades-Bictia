@@ -9,6 +9,9 @@ let hayTareas = localStorage.getItem('tarea')
 if(hayTareas !== null){
     tareas.push(hayTareas)
 }
+
+document.getElementById('lista').innerText = JSON.parse(localStorage.getItem('listaDeTareas'))
+
 const anadirTarea = (e) => {
     e.preventDefault()
     let tarea = document.getElementById('input-tarea').value
