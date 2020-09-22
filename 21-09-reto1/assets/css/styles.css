@@ -15,13 +15,15 @@
     justify-content: space-between;
 }
 #espacio-numeros, #espacio-letras{
-    background-color: pink;
+    background-color: rgb(199, 193, 252);
     height: 18px;
-    width: 89px;
+    width: 170px;
     border: 1px solid orange;
     align-items: flex-start;
     text-align: center;
     position: relative;
+    margin-bottom: 15px;
+    padding-bottom: 25px;
 }
 #espacio-numeros p, #espacio-letras p{
     height: 18px;
@@ -48,6 +50,48 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-
+    cursor: pointer;
 }
 
+.contenedor.oscuro {
+    background-color: #333;
+}
+.contenedor.oscuro h3,
+.contenedor.oscuro .letras,
+.contenedor.oscuro .numeros,
+.contenedor.oscuro .seleccionador-temas,
+.contenedor.oscuro .espacio-botones{
+    color: #fff;
+}
+.contenedor.oscuro #espacio-letras,
+.contenedor.oscuro #espacio-numeros{
+    background-color: #000;
+    box-shadow: 3px 3px 5px orange, 
+    4px 4px 10px rgb(0, 0, 0);
+}
+.contenedor.oscuro #espacio-botones span{
+    border: 1px solid orange;
+    box-shadow: 3px 3px 5px orange, 
+     4px 4px 10px rgb(0, 0, 0);
+}
+.contenedor.retro {
+    background-color: rgb(32, 94, 209);
+}
+.contenedor.retro h3,
+.contenedor.retro .letras,
+.contenedor.retro .numeros,
+.contenedor.retro .seleccionador-temas,
+.contenedor.retro .espacio-botones{
+    color: rgb(255, 255, 255);
+}
+.contenedor.retro .letras #espacio-letras,
+.contenedor.retro .numeros #espacio-numeros{
+    border: 1px solid rgb(0, 250, 154);
+    box-shadow: 3px 3px 5px rgb(0, 250, 154);
+    background-color: orchid;
+}
+.contenedor.retro .espacio-botones span{
+    border: 1px solid rgb(0, 250, 154);
+    box-shadow: 3px 3px 5px rgb(0, 250, 154), 
+     4px 4px 10px rgb(0, 0, 0);
+}

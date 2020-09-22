@@ -9,6 +9,18 @@ espacioLetras.appendChild(pL);
 espacioNumeros.appendChild(pN);
 let letrasInternas = [];
 let numerosInternos = [];
+//para cambio de tema:
+// let retro = document.getElementById('tema1').checked
+// let oscuro = document.getElementById('tema2').checked
+document.getElementById('tema1').addEventListener('click', () => {
+    document.getElementById('contenedor').classList.remove('oscuro')
+    document.getElementById('contenedor').classList.add('retro')
+})
+document.getElementById('tema2').addEventListener('click', () => {
+    document.getElementById('contenedor').classList.remove('retro')
+    document.getElementById('contenedor').classList.add('oscuro')
+})
+mostrarMensaje = false;
 for(let i = 0; i < letras.length; i++){
     // creación de botones:
     let span = document.createElement('span');
@@ -21,17 +33,20 @@ for(let i = 0; i < letras.length; i++){
     document.getElementById('espacio-botones').appendChild(span);
     //funcionalidad de botones:
     llenarNumeros = false
-    mostrarMensaje = false
     span.addEventListener('click', () => {
         if(!llenarNumeros){
             let letra = span.innerText[0];
             if(letrasInternas.includes(letra)){
-                alert(`${letra} ya existe!`)
+                Swal.fire(
+                    `'${letra}' ya fue puesta`,
+                    'tienes que seguir la secuencia sin repetir',
+                    'warning'
+                )
             }else if(Math.abs((i+1)-letrasInternas.length) > 1 ){
                 if(letras[i] === 'J' && Math.abs((i+1)-letrasInternas.length) == 2){
                     letrasInternas.push(letra);
                     pL.innerText = letrasInternas.join().replace(/,/gi, '');
-                    llenarNumeros = true
+                    llenarNumeros = true;
                 }
             }
             else {
@@ -46,7 +61,16 @@ for(let i = 0; i < letras.length; i++){
                 if(numeros[i] === 0 && Math.abs((i+1)-numerosInternos.length) == 2){
                     numerosInternos.push(numero);
                     pN.innerText = numerosInternos.join().replace(/,/gi, '');
-                    mostrarMensaje = true
+                    Swal.fire(
+                        'Buen trabajo!',
+                        'completaste la secuencia',
+                        'success'
+                    )
+                    numerosInternos = [];
+                    letrasInternas = [];
+                    pN.innerText = '';
+                    pL.innerText = '';
+                    llenarNumeros = false;
                 }
             }
             else {
@@ -55,6 +79,5 @@ for(let i = 0; i < letras.length; i++){
             }
         }
     })
-
 }
 
