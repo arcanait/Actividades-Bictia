@@ -43,6 +43,71 @@ for(let i = 0; i < letras.length; i++){
                     'warning'
                 )
             }else if(Math.abs((i+1)-letrasInternas.length) > 1 ){
+                // switch(i){
+                //     case 1:
+                //         Swal.fire(
+                //             `¡Sigue la secuencia!`,
+                //             `Te falta darle click a A-1` ,
+                //             'warning'
+                //         );
+                //         break
+                //     case 2:
+                //         Swal.fire(
+                //             `¡Sigue la secuencia!`,
+                //             `Te falta darle click a A-1, B-2` ,
+                //             'warning'
+                //         );
+                //         break
+                //     case 3:
+                //         Swal.fire(
+                //             `¡Sigue la secuencia!`,
+                //             `Te falta darle click a A-1, B-2, C-3` ,
+                //             'warning'
+                //         );
+                //         break
+                //     case 4:
+                //         Swal.fire(
+                //             `¡Sigue la secuencia!`,
+                //             `Te falta darle click a A-1, B-2, C-3, D-4` ,
+                //             'warning'
+                //         );
+                //         break
+                //     case 5:
+                //         Swal.fire(
+                //             `¡Sigue la secuencia!`,
+                //             `Te falta darle click a A-1, B-2, C-3, D-4, E-5` ,
+                //             'warning'
+                //         );
+                //         break
+                //     case 6:
+                //         Swal.fire(
+                //             `¡Sigue la secuencia!`,
+                //             `Te falta darle click a A-1, B-2, C-3, D-4, E-5, F-6` ,
+                //             'warning'
+                //         );
+                //         break
+                //     case 7:
+                //         Swal.fire(
+                //             `¡Sigue la secuencia!`,
+                //             `Te falta darle click a A-1, B-2, C-3, D-4, E-5, F-6, G-7` ,
+                //             'warning'
+                //         );
+                //         break
+                //     case 8:
+                //         Swal.fire(
+                //             `¡Sigue la secuencia!`,
+                //             `Te falta darle click a A-1, B-2, C-3, D-4, E-5, F-6, G-7, H-8` ,
+                //             'warning'
+                //         );
+                //         break
+                //     case 10:
+                //         Swal.fire(
+                //             `¡Sigue la secuencia!`,
+                //             `Te falta darle click a A-1, B-2, C-3, D-4, E-5, F-6, G-7, H-8, I-9` ,
+                //             'warning'
+                //         );
+                //         break
+                // }
                 if(letras[i] === 'J' && Math.abs((i+1)-letrasInternas.length) == 2){
                     letrasInternas.push(letra);
                     pL.innerText = letrasInternas.join().replace(/,/gi, '');
