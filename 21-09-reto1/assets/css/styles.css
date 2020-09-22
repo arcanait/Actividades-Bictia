@@ -1,0 +1,53 @@
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid orange;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    margin: 0 auto;
+}
+.letras{
+    display: flex;
+}
+.numeros, .letras{
+    display: flex;
+    justify-content: space-between;
+}
+#espacio-numeros, #espacio-letras{
+    background-color: pink;
+    height: 18px;
+    width: 89px;
+    border: 1px solid orange;
+    align-items: flex-start;
+    text-align: center;
+    position: relative;
+}
+#espacio-numeros p, #espacio-letras p{
+    height: 18px;
+    margin: 0;
+}
+.seleccionador-temas{
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: flex-end;
+}
+.espacio-botones {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+    width: 170px;
+}
+.espacio-botones span{
+    width: 45px;
+    height: 35px;
+    border-radius: 50px;
+    border: 1px solid orange;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
