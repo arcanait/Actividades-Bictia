@@ -72,7 +72,7 @@
 .contenedor.oscuro #espacio-botones span{
     border: 1px solid orange;
     box-shadow: 3px 3px 5px orange, 
-     4px 4px 10px rgb(0, 0, 0);
+     4px 4px 0 rgb(0, 0, 0);
 }
 .contenedor.retro {
     background-color: rgb(32, 94, 209);
@@ -93,5 +93,5 @@
 .contenedor.retro .espacio-botones span{
     border: 1px solid rgb(0, 250, 154);
     box-shadow: 3px 3px 5px rgb(0, 250, 154), 
-     4px 4px 10px rgb(0, 0, 0);
+     4px 4px 0 rgb(0, 0, 0);
 }

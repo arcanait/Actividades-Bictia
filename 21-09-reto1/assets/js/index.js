@@ -43,71 +43,21 @@ for(let i = 0; i < letras.length; i++){
                     'warning'
                 )
             }else if(Math.abs((i+1)-letrasInternas.length) > 1 ){
-                // switch(i){
-                //     case 1:
-                //         Swal.fire(
-                //             `¡Sigue la secuencia!`,
-                //             `Te falta darle click a A-1` ,
-                //             'warning'
-                //         );
-                //         break
-                //     case 2:
-                //         Swal.fire(
-                //             `¡Sigue la secuencia!`,
-                //             `Te falta darle click a A-1, B-2` ,
-                //             'warning'
-                //         );
-                //         break
-                //     case 3:
-                //         Swal.fire(
-                //             `¡Sigue la secuencia!`,
-                //             `Te falta darle click a A-1, B-2, C-3` ,
-                //             'warning'
-                //         );
-                //         break
-                //     case 4:
-                //         Swal.fire(
-                //             `¡Sigue la secuencia!`,
-                //             `Te falta darle click a A-1, B-2, C-3, D-4` ,
-                //             'warning'
-                //         );
-                //         break
-                //     case 5:
-                //         Swal.fire(
-                //             `¡Sigue la secuencia!`,
-                //             `Te falta darle click a A-1, B-2, C-3, D-4, E-5` ,
-                //             'warning'
-                //         );
-                //         break
-                //     case 6:
-                //         Swal.fire(
-                //             `¡Sigue la secuencia!`,
-                //             `Te falta darle click a A-1, B-2, C-3, D-4, E-5, F-6` ,
-                //             'warning'
-                //         );
-                //         break
-                //     case 7:
-                //         Swal.fire(
-                //             `¡Sigue la secuencia!`,
-                //             `Te falta darle click a A-1, B-2, C-3, D-4, E-5, F-6, G-7` ,
-                //             'warning'
-                //         );
-                //         break
-                //     case 8:
-                //         Swal.fire(
-                //             `¡Sigue la secuencia!`,
-                //             `Te falta darle click a A-1, B-2, C-3, D-4, E-5, F-6, G-7, H-8` ,
-                //             'warning'
-                //         );
-                //         break
-                //     case 10:
-                //         Swal.fire(
-                //             `¡Sigue la secuencia!`,
-                //             `Te falta darle click a A-1, B-2, C-3, D-4, E-5, F-6, G-7, H-8, I-9` ,
-                //             'warning'
-                //         );
-                //         break
-                // }
+                let tamanoArray = letrasInternas.length 
+                console.log('tamanoArray', tamanoArray)
+                let letrasFaltantes = []
+                for(let j = tamanoArray; j < i; j++){
+                    if(letras[j] !== ""){
+                        letrasFaltantes.push(letras[j])
+                    }
+                }
+                if(letrasFaltantes.length > 0){
+                    Swal.fire(
+                        `Porfavor sigue la secuencia`,
+                        `te falta presionar ${letrasFaltantes.join()}` ,
+                        'warning'
+                    )
+                }
                 if(letras[i] === 'J' && Math.abs((i+1)-letrasInternas.length) == 2){
                     letrasInternas.push(letra);
                     pL.innerText = letrasInternas.join().replace(/,/gi, '');
@@ -123,6 +73,20 @@ for(let i = 0; i < letras.length; i++){
             if(numerosInternos.includes(numero)){
                 alert(`${numero} ya existe!`)
             }else if(Math.abs((i+1)-numerosInternos.length) > 1 ){
+                let tamanoArray = numerosInternos.length 
+                let numerosFaltantes = []
+                for(let j = tamanoArray; j < i; j++){
+                    if(letras[j] !== ""){
+                        numerosFaltantes.push(numeros[j])
+                    }
+                }
+                if(numerosFaltantes.length > 0){
+                    Swal.fire(
+                        `Porfavor sigue la secuencia`,
+                        `te falta presionar ${numerosFaltantes.join()}` ,
+                        'warning'
+                    )
+                }
                 if(numeros[i] === 0 && Math.abs((i+1)-numerosInternos.length) == 2){
                     numerosInternos.push(numero);
                     pN.innerText = numerosInternos.join().replace(/,/gi, '');
