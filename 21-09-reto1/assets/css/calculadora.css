@@ -17,6 +17,8 @@
 .contenedor .historial{
     width: 280px;
     background-color: gainsboro;
+    display: flex;
+    flex-direction: column;
 }
 .tablero{
     /* width: 320px; */
@@ -67,4 +69,12 @@
 }
 .teclas .spanNumero:active{
     background-color: rgb(223, 221, 221);
+}
+.titulo-historial{
+    border-bottom: 5px solid rgb(9, 9, 226);
+    width: 90px;
+}
+#espacio-para-historial{
+    display: flex;
+    flex-direction: column;
 }

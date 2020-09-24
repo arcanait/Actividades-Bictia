@@ -2,6 +2,7 @@ let teclas = ['%','CE','C','<-','1/x','x^2','raizx','/',7,8,9,'*',4,5,6,'-',1,2,
 let numeros = [1,2,3,4,5,6,7,8,9,0]
 let teclado = document.getElementById('teclas');
 let primerArgumento = document.getElementById('espacio-primer-argumento');
+let historial = document.getElementById('espacio-para-historial');
 let dictado = [];
 for(let i = 0; i < teclas.length; i++){
     if(typeof(teclas[i]) === 'number'){
@@ -24,10 +25,17 @@ for(let i = 0; i < teclas.length; i++){
             if(teclas[i] === '='){
                 let operacion = hacerOperacion(dictado);
                 primerArgumento.innerText = operacion
-            }else if(teclas[i] === 'C' || teclas[i] === 'CE'){
+                pintarElementosEnHistorial(dictado.join().replace(/,/gi,''))
+            }else if(teclas[i] === 'C' ){
                 dictado = [];
                 primerArgumento.innerText = '';
-            }else if(teclas[i] === '<-'){
+            }else if( teclas[i] === 'CE'){
+                listaHistorial = [];
+                historial.innerText = '';
+                dictado = [];
+                primerArgumento.innerText = '';
+            }
+            else if(teclas[i] === '<-'){
                 dictado.pop();
                 primerArgumento.innerText = dictado.join().replace(/,/gi,'');
             }
@@ -68,4 +76,19 @@ const hacerOperacion = (numeros) => {
         case 'raizx':
             return (typeof(Math.sqrt(numeros1)) === 'number')? Math.sqrt(numeros1):'Math Error';
     }
+}
+
+let listaHistorial = [];
+const pintarElementosEnHistorial = (items) => {
+    console.log('as')
+    listaHistorial = [];
+    listaHistorial.push(items)
+    listaHistorial.forEach((item, i) => {
+        let span = document.createElement('span');
+        span.setAttribute('id', `spanHistorial${i}`);
+        span.setAttribute('class', 'spanHistorial');
+        span.innerText = item
+        historial.appendChild(span)
+    })
+
 }
