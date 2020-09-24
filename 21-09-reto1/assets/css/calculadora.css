@@ -1,0 +1,70 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+.contenedor{
+    width: 600px;
+    margin: 0 auto;
+    border: 1px solid #333;
+    box-shadow: 0 0 5px #000;
+    display: flex;
+}
+.calculadora{
+    width: 320px;
+    margin: 0;
+}
+.contenedor .historial{
+    width: 280px;
+    background-color: gainsboro;
+}
+.tablero{
+    /* width: 320px; */
+    height: 150px;
+    margin: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    background-color: gainsboro;
+}
+.tablero #espacio-primer-argumento {
+    font-size: 40px;
+}
+.teclas{
+    display: flex;
+    flex-wrap: wrap;
+    width: 320px;
+    margin: 0;
+}
+.teclas .span{
+    width: 80px;
+    height: 50px;
+    border: 1px solid #dcdcdc;
+    cursor: pointer;
+    text-align: center;
+    align-items: center;
+    font-weight: 500;
+    background-color:  #f5f3f3;
+}
+.teclas .span:hover{
+    background-color: rgb(184, 182, 182);
+}
+.teclas .span:active{
+    background-color: rgb(223, 221, 221);
+}
+.teclas .spanNumero{
+    width: 80px;
+    height: 50px;
+    border: 1px solid gainsboro;
+    cursor: pointer;
+    text-align: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 25px;
+}
+.teclas .spanNumero:hover{
+    background-color: rgb(184, 182, 182);
+}
+.teclas .spanNumero:active{
+    background-color: rgb(223, 221, 221);
+}
