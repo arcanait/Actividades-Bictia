@@ -1,5 +1,5 @@
 //URL de la API
-const API = "https://pokeapi.co/api/v2/pokemon";
+const API = "https://rickandmortyapi.com/api/character";
 
 // Obtener resultado de API
 const getData = (api) => {
@@ -7,7 +7,7 @@ const getData = (api) => {
         .then((response) => response.json())
         .then((json) => {
             llenarDatos(json),
-            paginacion(json);
+            paginacion(json.info);
         })
         .catch((error) => {
             console.log("Error :", error);
