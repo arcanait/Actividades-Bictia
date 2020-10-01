@@ -9,6 +9,16 @@ espacioLetras.appendChild(pL);
 espacioNumeros.appendChild(pN);
 let letrasInternas = [];
 let numerosInternos = [];
+if(localStorage.getItem('letras') !== null){
+    letrasInternas.push(JSON.parse(localStorage.getItem('letras')))
+    pL.innerText = letrasInternas.join().replace(/,/gi, '');
+    console.log('letrasInternas', letrasInternas)
+}
+if(localStorage.getItem('numeros') !== null){
+    numerosInternos.push(JSON.parse(localStorage.getItem('numeros')))
+    pN.innerText = numerosInternos.join().replace(/,/gi, '');
+}
+
 //para cambio de tema:
 // let retro = document.getElementById('tema1').checked
 // let oscuro = document.getElementById('tema2').checked
@@ -35,6 +45,7 @@ for(let i = 0; i < letras.length; i++){
     llenarNumeros = false
     span.addEventListener('click', () => {
         if(!llenarNumeros){
+
             let letra = span.innerText[0];
             if(letrasInternas.includes(letra)){
                 Swal.fire(
@@ -44,7 +55,6 @@ for(let i = 0; i < letras.length; i++){
                 )
             }else if(Math.abs((i+1)-letrasInternas.length) > 1 ){
                 let tamanoArray = letrasInternas.length 
-                console.log('tamanoArray', tamanoArray)
                 let letrasFaltantes = []
                 for(let j = tamanoArray; j < i; j++){
                     if(letras[j] !== ""){
@@ -65,8 +75,22 @@ for(let i = 0; i < letras.length; i++){
                 }
             }
             else {
-                letrasInternas.push(letra);
-                pL.innerText = letrasInternas.join().replace(/,/gi, '');
+                let letrasStorage = localStorage.getItem('letras')
+                
+                if(letrasStorage !== null){
+                    console.log('b')
+                    if(!letrasStorage.includes(letra)){
+                        letrasInternas.push(letra);
+                        localStorage.setItem('letras', JSON.stringify(letrasInternas))
+                        pL.innerText = letrasInternas.join().replace(/,/gi, '');
+                    }else{
+                        
+                    }
+                }else{
+                    letrasInternas.push(letra);
+                    localStorage.setItem('letras', letrasInternas)
+                    pL.innerText = letrasInternas.join().replace(/,/gi, '');
+                }
             }
         }else{
             let numero = span.innerText[4];
@@ -104,6 +128,7 @@ for(let i = 0; i < letras.length; i++){
             }
             else {
                 numerosInternos.push(numero);
+                localStorage.setItem('numeros', JSON.stringify(numerosInternos))
                 pN.innerText = numerosInternos.join().replace(/,/gi, '');
             }
         }

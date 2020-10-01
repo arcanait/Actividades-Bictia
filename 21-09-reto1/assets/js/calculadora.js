@@ -4,6 +4,18 @@ let teclado = document.getElementById('teclas');
 let primerArgumento = document.getElementById('espacio-primer-argumento');
 let historial = document.getElementById('espacio-para-historial');
 let dictado = [];
+let listaHistorial = [];
+let historialEnLocalStorage = localStorage.getItem('historial');
+if(historialEnLocalStorage !== null){
+    let his = historialEnLocalStorage.split(',');
+    his.forEach((item, i) => {
+        let span = document.createElement('span');
+        span.setAttribute('id', `spanHistorial${i}`);
+        span.setAttribute('class', 'spanHistorial');
+        span.innerText = item;
+        historial.appendChild(span)
+    })
+}
 for(let i = 0; i < teclas.length; i++){
     if(typeof(teclas[i]) === 'number'){
         let span = document.createElement('span');
@@ -25,7 +37,7 @@ for(let i = 0; i < teclas.length; i++){
             if(teclas[i] === '='){
                 let operacion = hacerOperacion(dictado);
                 primerArgumento.innerText = operacion
-                pintarElementosEnHistorial(dictado.join().replace(/,/gi,''))
+                pintarElementosEnHistorial(dictado.join().replace(/,/gi,''), operacion)
             }else if(teclas[i] === 'C' ){
                 dictado = [];
                 primerArgumento.innerText = '';
@@ -57,8 +69,8 @@ const hacerOperacion = (numeros) => {
             signo = numero
         }
     })
-    numeros1 = numeros.join().replace(/,/gi, '').split(signo)[0]
-    numeros2 = numeros.join().replace(/,/gi, '').split(signo)[1]
+    numeros1 = parseFloat(numeros.join().replace(/,/gi, '').split(signo)[0])
+    numeros2 = parseFloat(numeros.join().replace(/,/gi, '').split(signo)[1])
 
     switch(signo){
         case '*':
@@ -66,7 +78,7 @@ const hacerOperacion = (numeros) => {
         case '/':
             return (typeof(numeros1 / numeros2) === 'number')? numeros1 / numeros2 : 'Math Error';
         case '+':
-            return (typeof(numeros1 + numeros2) === 'number')? numeros1 + numeros2 : 'Math Error';
+            return (typeof(numeros1+numeros2) === 'number')? numeros1+numeros2 : 'Math Error';
         case '-':
             return (typeof(numeros1 - numeros2) === 'number')? numeros1 - numeros2: 'Math Error';
         case 'x^2':
@@ -75,19 +87,22 @@ const hacerOperacion = (numeros) => {
             return (typeof(1 / numeros1) === 'number')? 1 / numeros1 : 'Math Error';
         case 'raizx':
             return (typeof(Math.sqrt(numeros1)) === 'number')? Math.sqrt(numeros1):'Math Error';
+        default:
+            return 'Sintaxis error'
     }
 }
 
-let listaHistorial = [];
-const pintarElementosEnHistorial = (items) => {
-    console.log('as')
+let historialEnArray = [];
+const pintarElementosEnHistorial = (items, resultado) => {
     listaHistorial = [];
     listaHistorial.push(items)
     listaHistorial.forEach((item, i) => {
+        historialEnArray.push(`${item} = <b>${resultado}</b>`)
+        localStorage.setItem('historial', [historialEnArray])
         let span = document.createElement('span');
         span.setAttribute('id', `spanHistorial${i}`);
         span.setAttribute('class', 'spanHistorial');
-        span.innerText = item
+        span.innerText = `${item} = ${resultado}` 
         historial.appendChild(span)
     })
 
