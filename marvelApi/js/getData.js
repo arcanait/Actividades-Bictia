@@ -13,7 +13,6 @@ const getData = (api) => {
         .then((json) => {
             console.log(json)
             obtenerDescripcion(json.data.results)
-            // paginacion(json);
         })
         .catch((error) => {
             console.log("Error :", error);
@@ -40,7 +39,6 @@ const llenarDatos = () => {
         html += `<img src="${pj.image}" class="card-img-top" alt="...">`;
         html += '<div class="card-body">';
         html += `<h5 class="card-title">${pj.name}</h5>`;
-        // html += `<p class="card-text">${pj.species}</p>`;
         html += "</div>";
         html += "</div>";
         html += "</div>";
@@ -48,18 +46,6 @@ const llenarDatos = () => {
     document.getElementById("datosPersonajes").innerHTML = html;
 };
 
-//paginación:
-
-const paginacion = (info) => {
-
-    let prevDisabled = info.previous == null? "disabled": "";
-    let nextDisabled = info.next == null? "disabled": "";
-
-    let html = "";
-    html += `<li class="page-item ${prevDisabled}"><a class="page-link" onclick="getData('${info.previous}')">Previous<a/></li>`;
-    html += `<li class="page-item ${nextDisabled}"><a class="page-link" onclick="getData('${info.next}')">Next<a/></li>`;
-    document.getElementById("paginacion").innerHTML = html;
-}
 
 //EjecutargetData
 getData(url);
