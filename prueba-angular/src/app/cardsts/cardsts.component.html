@@ -1,0 +1,17 @@
+<button class="page-item"  [class.disabled]="prevDisabled"><a class="page-link" (click)="getData(prev)">Previous</a></button>
+<button class="page-item"  [class.disabled]="nextDisabled" ><a class="page-link" (click)="getData(next)">Next</a></button>
+<!-- [ngClass]="{'disabled' : prevDisabled === true}"  -->
+<!-- [ngClass]="{'disabled' : nextDisabled === true}" -->
+<div class="row">
+    <div *ngFor='let personaje of personajes'>
+        <div class="col mt-5">
+            <div class="card" style="width: 10rem;">
+                <img src="{{personaje.image}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{personaje.name}}</h5>
+                    <p class="card-text">{{personaje.species}}</p>
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>
