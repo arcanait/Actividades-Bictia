@@ -1,7 +1,5 @@
 <button class="page-item"  [class.disabled]="prevDisabled"><a class="page-link" (click)="getData(prev)">Previous</a></button>
 <button class="page-item"  [class.disabled]="nextDisabled" ><a class="page-link" (click)="getData(next)">Next</a></button>
-<!-- [ngClass]="{'disabled' : prevDisabled === true}"  -->
-<!-- [ngClass]="{'disabled' : nextDisabled === true}" -->
 <div class="row">
     <div *ngFor='let personaje of personajes'>
         <div class="col mt-5">
