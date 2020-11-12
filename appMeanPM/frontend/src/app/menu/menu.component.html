@@ -1,0 +1,30 @@
+
+<mat-toolbar class="menu">
+    <mat-icon aria-hidden="false" aria-label="event">event</mat-icon>
+    <ul class="nav spacer">
+        <li>
+            <a href="#">menu</a>
+        </li>
+        <span class="spacerIcon"></span>
+        <li>
+            <span class="spacerIcon"></span>
+            <mat-icon aria-hidden="false" aria-label="fact_check">fact_check</mat-icon>
+            <a routerLink='crear'>Crear actividad</a>
+        </li>
+        <li>
+            <a routerLink='listar'>Listar actividad</a>
+        </li>
+        <li>
+            <mat-icon *ngIf="!auth.loginOn()" aria-hidden="false" aria-label="account_circle">account_circle</mat-icon>
+            <a *ngIf="!auth.loginOn()" routerLink='login'>Login</a>
+        </li>
+        <li>
+            <mat-icon *ngIf="!auth.loginOn()" aria-hidden="false" aria-label="account_box">account_box</mat-icon>
+            <a *ngIf="!auth.loginOn()" routerLink='registro'>Registro</a>
+        </li>
+        <li>
+            <mat-icon *ngIf="auth.loginOn()" aria-hidden="false" aria-label="login">login</mat-icon>
+            <a *ngIf="auth.loginOn()" mat-button routerLink='registro' (click)="auth.cerrarSesion()">Cerrar sesión</a>
+        </li>
+    </ul>
+</mat-toolbar>

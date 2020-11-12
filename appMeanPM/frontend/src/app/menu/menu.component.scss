@@ -1,0 +1,23 @@
+.nav {
+    display: flex;
+}
+.nav li{
+    list-style: none;
+}
+.nav li a{
+    margin-left: 20px;
+}
+.spacer {
+    flex: 1 1 auto;     
+}
+.spacerIcon {
+    flex: 0.1 0.1 auto;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+.menu {
+    background-color: rgb(139, 139, 139);
+}
+  

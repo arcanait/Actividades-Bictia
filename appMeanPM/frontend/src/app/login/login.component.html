@@ -1,0 +1,18 @@
+<div class="form">
+    <mat-card class="card">
+      <mat-card-title>Logear usuario</mat-card-title>
+      <mat-card-content>
+        <div class="container">
+          <mat-form-field>
+            <input [(ngModel)]="logearUsuario.correo" matInput placeholder="Correo">
+          </mat-form-field>
+          <mat-form-field>
+            <input [(ngModel)]="logearUsuario.pass" matInput placeholder="Contraseña">
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button (click)="logear()" class="button col" mat-raised-button>Login</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
